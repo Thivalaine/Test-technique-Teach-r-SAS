@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="text-center">
+            <h2>Liste des Teach'r</h2>
+            <button onclick="window.location.href='{{ path('addTeachr') }}'" class="btn btn-success">Ajouter</button>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom et Prénom</th>
+                <th scope="col">Formation</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for teachr in teachrs %}
+                <tr>
+                    <th scope="row">{{ teachr.id }}</th>
+                    <td>{{ teachr.name }}</td>
+                    <td>{{ teachr.formation }}</td>
+                    <td>{{ teachr.description }}</td>
+                    <td><button onclick="window.location.href='{{ path('editTeachr', {'id': teachr.id}) }}'" class="btn btn-secondary">Modifier</button><button onclick="if(!confirm('Êtes-vous sûr de vouloir supprimer ce son ?')) { return false; } else { window.location.href='{{ path('deleteTeachr', {'id': teachr.id}) }}' }" class="btn btn-danger">Supprimer</button></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

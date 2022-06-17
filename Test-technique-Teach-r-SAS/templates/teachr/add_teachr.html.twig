@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AddTeachrController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="text-center">
+        {% if editMode %}
+            <h2>Modification d'un Teachr</h2>
+        {% else %}
+            <h2>Ajout d'un Teachr</h2>
+        {% endif %}
+        </div>
+
+        {{ form_start(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.formation) }}
+        {{ form_row(form.description) }}
+        {{ form_row(form.image) }}
+        <button type="submit" class="btn btn-success">{% if editMode %}
+                Modifier
+            {% else %}
+                Ajouter
+            {% endif %}</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

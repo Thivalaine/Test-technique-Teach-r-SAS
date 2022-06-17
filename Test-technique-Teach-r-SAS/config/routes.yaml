@@ -5,3 +5,23 @@ controllers:
 kernel:
     resource: ../src/Kernel.php
     type: annotation
+
+index:
+    path: /teachr
+    methods: [ "GET" ]
+    controller: App\Controller\AddTeachrController::index
+
+addTeachr:
+    path: /add_teachr
+    methods: [ "GET", "POST" ]
+    controller: App\Controller\AddTeachrController::addTeachr
+
+editTeachr:
+    path: /edit_teachr/{id}
+    methods: [ "GET", "POST" ]
+    controller: App\Controller\AddTeachrController::editTeachr
+
+deleteTeachr:
+    path: /delete_teachr/{id}
+    methods: [ "GET", "POST" ]
+    controller: App\Controller\AddTeachrController::deleteTeachr
