@@ -1,7 +1,7 @@
 # Test-technique-Teach-r-SAS
 Test technique - Développeur full-stack - Juin 2022
 
-###Pour démarrer ou mettre en place le démarrage de l'application
+### Pour démarrer ou mettre en place le démarrage de l'application
 
 Commencez par installer NodeJS sur votre poste pour pouvoir effectuer des commandes "npm" ou "yarn" sur un invite de commandes :
 
@@ -37,7 +37,7 @@ puis relancer :
 
 	react-native run-android
 
-###Pour démarrer l'application Symfony
+### Pour démarrer l'application Symfony
 
 Installer les packages de Composer :
 
@@ -54,6 +54,10 @@ Implémenter les tables :
 Insérer les jeux d'essais :
 
 	php bin/console doctrine:fixtures:load 
+	
+Démarrer le projet :
+	
+	symfony server:start -d
 
 Pour accéder à la page de l'application :
 
