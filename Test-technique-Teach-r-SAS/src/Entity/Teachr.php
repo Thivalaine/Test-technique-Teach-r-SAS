@@ -25,6 +25,9 @@ class Teachr
     #[ORM\Column(type: 'string', length: 255)]
     private $image;
 
+    #[ORM\Column(type: 'datetime')]
+    private $date_creation;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,7 +38,7 @@ class Teachr
         return $this->name;
     }
 
-    public function setName(string $name): self
+    public function setName(?string $name): self
     {
         $this->name = $name;
 
@@ -47,7 +50,7 @@ class Teachr
         return $this->formation;
     }
 
-    public function setFormation(string $formation): self
+    public function setFormation(?string $formation): self
     {
         $this->formation = $formation;
 
@@ -59,7 +62,7 @@ class Teachr
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
@@ -71,9 +74,21 @@ class Teachr
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getDateCreation(): ?\DateTimeInterface
+    {
+        return $this->date_creation;
+    }
+
+    public function setDateCreation(\DateTimeInterface $date_creation): self
+    {
+        $this->date_creation = $date_creation;
 
         return $this;
     }

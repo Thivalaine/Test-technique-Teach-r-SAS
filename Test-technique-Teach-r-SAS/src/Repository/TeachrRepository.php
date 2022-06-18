@@ -54,13 +54,12 @@ class TeachrRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Teachr
-//    {
-//        return $this->createQueryBuilder('t')
-//            ->andWhere('t.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    public function countTeachr()
+    {
+
+        $query = $this->createQueryBuilder('t')
+            ->select('count(t.id)');
+        return $query->getQuery()->getOneOrNullResult();
+
+    }
 }

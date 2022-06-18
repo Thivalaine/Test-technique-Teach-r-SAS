@@ -14,6 +14,8 @@
                 <th scope="col">Nom et Prénom</th>
                 <th scope="col">Formation</th>
                 <th scope="col">Description</th>
+                <th scope="col">Image</th>
+                <th scope="col">Date de création</th>
                 <th scope="col">Action</th>
             </tr>
             </thead>
@@ -24,6 +26,8 @@
                     <td>{{ teachr.name }}</td>
                     <td>{{ teachr.formation }}</td>
                     <td>{{ teachr.description }}</td>
+                    <td>{{ teachr.image }}</td>
+                    <td>{{ teachr.datecreation |date("d/m/Y") }}</td>
                     <td><button onclick="window.location.href='{{ path('editTeachr', {'id': teachr.id}) }}'" class="btn btn-secondary">Modifier</button><button onclick="if(!confirm('Êtes-vous sûr de vouloir supprimer ce son ?')) { return false; } else { window.location.href='{{ path('deleteTeachr', {'id': teachr.id}) }}' }" class="btn btn-danger">Supprimer</button></td>
                 </tr>
             {% endfor %}

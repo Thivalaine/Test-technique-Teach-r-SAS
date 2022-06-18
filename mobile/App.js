@@ -49,8 +49,7 @@ export default class App extends React.Component {
                 height: 50,
                 float: 'left',
                 borderRadius: 50,
-            }} source={item.image}
-            />
+            }} source={require('./images/avatar.png')} />
           <Text style={{fontSize: 15, marginBottom: 15}}>{item.name}</Text>
             <Text style={{color: 'grey', fontSize: 10}}>{item.preformation}</Text>
           <Text style={{marginBottom: 15}}>{item.formation}</Text>
@@ -88,7 +87,6 @@ export default class App extends React.Component {
       const headerTitle = "Teach'r favoris"
 
     return (
-        // Affichage du collapse header
         <SafeAreaView style={{flex: 1, backgroundColor:'white'}}>
             <View style={styles.container}>
                 <Animated.View style={[styles.header, { height: headerHeight }]}>
@@ -125,7 +123,6 @@ export default class App extends React.Component {
   }
 
 }
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,

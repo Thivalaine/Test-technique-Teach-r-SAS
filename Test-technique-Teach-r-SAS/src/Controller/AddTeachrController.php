@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Statistics;
 use App\Entity\Teachr;
 use App\Form\TeachrAddType;
 use App\Repository\TeachrRepository;
@@ -31,6 +32,26 @@ class AddTeachrController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid())
         {
+            $statistics = new Statistics();
+
+            $count = $teachrRepository->countTeachr();
+
+            $statistics->setCount(implode(',', $count)+1);
+
+            $statistics->setDateCount(new \DateTime());
+
+            $manager->persist($statistics);
+
+            $file = $form->get('image')->getData();
+
+            if($file)
+            {
+                $fileName = md5(uniqid()) . '.' .$file->guessExtension();
+
+                $file->move("../../mobile/images/", $fileName);
+
+                $teachr->setImage($fileName);
+            }
 
             $manager->persist($teachr);
             $manager->flush();
@@ -49,18 +70,11 @@ class AddTeachrController extends AbstractController
                 $datas[$key]['predescription'] = "Description";
                 $datas[$key]['description'] = $item->getDescription();
                 $datas[$key]['image'] = $item->getImage();
+                $datas[$key]['date_creation'] = $item->getDateCreation();
 
             }
 
-            if(file_put_contents("../../mobile/components/item.json",
-                json_encode($datas)))
-            {
-                echo "fichier créer";
-            }
-            else
-            {
-                echo "echouer";
-            }
+            file_put_contents("../../mobile/components/item.json", json_encode($datas));
 
             return $this->redirectToRoute('index');
         }
@@ -83,6 +97,17 @@ class AddTeachrController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid())
         {
+            $file = $form->get('image')->getData();
+
+            if($file)
+            {
+                $fileName = md5(uniqid()) . '.' .$file->guessExtension();
+
+                $file->move("../../mobile/images/", $fileName);
+
+                $teachr->setImage($fileName);
+            }
+
 
             $manager->persist($teachr);
             $manager->flush();
@@ -99,18 +124,11 @@ class AddTeachrController extends AbstractController
                 $datas[$key]['predescription'] = "Description";
                 $datas[$key]['description'] = $item->getDescription();
                 $datas[$key]['image'] = $item->getImage();
+                $datas[$key]['date_creation'] = $item->getDateCreation();
 
             }
 
-            if(file_put_contents("../../mobile/components/item.json",
-                json_encode($datas)))
-            {
-                echo "fichier créer";
-            }
-            else
-            {
-                echo "echouer";
-            }
+            file_put_contents("../../mobile/components/item.json", json_encode($datas));
 
             return $this->redirectToRoute('index', ['id' => $teachr->getId()]);
         }
@@ -126,6 +144,17 @@ class AddTeachrController extends AbstractController
     {
 
         $manager->remove($teachr);
+
+        $statistics = new Statistics();
+
+        $count = $teachrRepository->countTeachr();
+
+        $statistics->setCount(implode(',', $count)-1);
+
+        $statistics->setDateCount(new \DateTime());
+
+        $manager->persist($statistics);
+
         $manager->flush();
 
         $items = $teachrRepository->findAll();
@@ -140,18 +169,11 @@ class AddTeachrController extends AbstractController
             $datas[$key]['predescription'] = "Description";
             $datas[$key]['description'] = $item->getDescription();
             $datas[$key]['image'] = $item->getImage();
+            $datas[$key]['date_creation'] = $item->getDateCreation();
 
         }
 
-        if(file_put_contents("../../mobile/components/item.json",
-            json_encode($datas)))
-        {
-            echo "fichier créer";
-        }
-        else
-        {
-            echo "echouer";
-        }
+        file_put_contents("../../mobile/components/item.json", json_encode($datas));
 
         return $this->redirectToRoute('index', ['id' => $teachr->getId()]);
     }

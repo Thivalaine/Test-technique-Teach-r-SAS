@@ -1,0 +1,70 @@
+-
+    name: 'Pierre du Parc de Locmaria'
+    preformation: "Formation"
+    formation: 'Université Paris Dauphine'
+    predescription: "Description"
+    description: "Calme et patient, je sais m'adapter à l'élève et comprendre sa méthode d'apprentissage afin de l'aider à progresser au mieux"
+    image: 'avatar.png'
+-
+    name: 'Théo Davigny'
+    preformation: "Formation"
+    formation: 'BTS SIO au Lycée Saint-Vincent à Senlis'
+    predescription: "Description"
+    description: 'Je suis motivé, sérieux et créatif'
+    image: 'avatar.png'
+-
+    name: 'Johnnathan Dubois'
+    preformation: "Formation"
+    formation: 'Institut Galilée Université Paris 13'
+    predescription: "Description"
+    description: 'Je suis compétent dans mon domaine'
+    image: 'avatar.png'
+-
+    name: 'Christian Dupont'
+    preformation: "Formation"
+    formation: 'ECAM EPMI à Paris Cergy'
+    predescription: "Description"
+    description: "J'avance selon le rythme de l'élève"
+    image: 'avatar.png'
+-
+    name: 'Marie Martin'
+    preformation: "Formation"
+    formation: 'Université Paris-Est Marne-la-vallée IUT à Meaux'
+    predescription: "Description"
+    description: "Je suis à l'écoute des élèves,"
+    image: 'avatar.png'
+-
+    name: 'Marc Dally'
+    preformation: "Formation"
+    formation: 'BTS SIO au Lycée Polyvalent Jean Rostand à Villepinte'
+    predescription: "Description"
+    description: "J'espère faire apprendre aux élèves un grand nombre de mes compétences que j'ai pu acquérir"
+    image: 'avatar.png'
+-
+    name: 'Corinne Bourgeois'
+    preformation: "Formation"
+    formation: 'Institut Supérieur Maria Montessori à Paris'
+    predescription: "Description"
+    description: "L'élève doit absolument pouvoir suivre mes exigences afin d'avancer dans l'apprentissage"
+    image: 'avatar.png'
+-
+    name: 'Lucas Larcher'
+    preformation: "Formation"
+    formation: "Polytech Lille Ecole d'Ingénieur à Lille"
+    predescription: "Description"
+    description: "Je suis patient et m'adapte à toutes les situations"
+    image: 'avatar.png'
+-
+    name: 'Quentin Dumarché'
+    preformation: "Formation"
+    formation: 'BTS SISR au Lycée Jean Rostand à Chantilly'
+    predescription: "Description"
+    description: "J'apprends en apprenant à mes élèves les concepts principaux du cours"
+    image: 'avatar.png'
+-
+    name: 'Pauline Monet'
+    preformation: "Formation"
+    formation: 'IUT de Créteil-Vitry'
+    predescription: "Description"
+    description: "Attentives aux remarques et perséverence dans l'apprentissage des notions"
+    image: 'avatar.png'

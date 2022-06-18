@@ -7,7 +7,7 @@ kernel:
     type: annotation
 
 index:
-    path: /teachr
+    path: /
     methods: [ "GET" ]
     controller: App\Controller\AddTeachrController::index
 
