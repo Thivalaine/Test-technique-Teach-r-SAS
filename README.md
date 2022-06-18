@@ -54,6 +54,10 @@ Implémenter les tables :
 Insérer les jeux d'essais :
 
 	php bin/console doctrine:fixtures:load 
+	
+Démarrer le projet :
+	
+	symfony server:start -d
 
 Pour accéder à la page de l'application :
 
