@@ -37,7 +37,7 @@ puis relancer :
 
 	react-native run-android
 
-###Pour démarrer l'application Symfony
+### Pour démarrer l'application Symfony
 
 Installer les packages de Composer :
 
