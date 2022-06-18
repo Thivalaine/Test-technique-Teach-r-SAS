@@ -1,7 +1,7 @@
 # Test-technique-Teach-r-SAS
 Test technique - Développeur full-stack - Juin 2022
 
-###Pour démarrer ou mettre en place le démarrage de l'application
+### Pour démarrer ou mettre en place le démarrage de l'application
 
 Commencez par installer NodeJS sur votre poste pour pouvoir effectuer des commandes "npm" ou "yarn" sur un invite de commandes :
 
